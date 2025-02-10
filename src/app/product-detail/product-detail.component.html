@@ -1,0 +1,51 @@
+<div class="p-5">
+    <app-navbar [productList]="shoppingCart" [total]="0" style="margin-bottom: 200px;">
+    </app-navbar>
+
+
+    <div class="container" style="margin-top: 100px;">
+        <div class="card" style="max-width: 100%">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="card-img-top"
+                        [src]="product.image || 'https://static.thenounproject.com/png/2616533-512.png'"
+                        alt="Card image cap" (error)="setDefaultImage($event)">
+                    <div class="col ">
+                        <h2 class="bg-success text-center" style="width: 100%;color: #fff;">
+                            &dollar; {{product.price}}.00
+                        </h2>
+                    </div>
+                    <div class="label-top text-center">
+                        <h4>{{product.brand}}</h4>
+                    </div>
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title p-3" style="background-color: #eae9e9;">{{product.title}}</h5>
+                        <p>{{product.description}}</p>
+                    </div>
+                    <div class="row p-4">
+                        <div class="col col-3 m-1 badge bg-success">
+                            Model: {{product.model}}
+                        </div>
+                        <div class="col col-3 m-1 badge bg-primary">
+                            Color: {{product.color}}
+                        </div>
+                        <div class="col col-3 m-1 badge bg-warning">
+                            Category: {{product.category}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col col-10"></div>
+                <div class="col col-2 mb-3 align-self-end">
+                    <button (click)="goToList()" class="btn btn-primary">Return to List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

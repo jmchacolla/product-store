@@ -1,0 +1,8 @@
+<div>
+    <app-navbar [productList]="shoppingCart" [total]="cartTotal">
+    </app-navbar>
+    <div class="container mt-5">
+        <app-card *ngFor="let product of productList" [productItem]="product" (newPurchase)="addNewPurchase($event)">
+        </app-card>
+    </div>
+</div>

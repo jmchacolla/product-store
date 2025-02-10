@@ -1,0 +1,29 @@
+/* .card > .card-title {
+    text-overflow: ellipsis;
+} */
+
+.card > div > .card-title {
+    height: 5rem;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+}
+
+.card > div > div > div > .btn{
+    width: 100%;
+}
+.card > img {
+    max-height: 18rem;
+}
+
+.label-top {
+    position: absolute;
+    background-color: #8bc34a;
+    color: #fff;
+    top: 8px;
+    right: 8px;
+    padding: 5px 10px 5px 10px;
+    font-size: .7rem;
+    font-weight: 600;
+    border-radius: 3px;
+    text-transform: uppercase
+}

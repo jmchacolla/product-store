@@ -1,0 +1,10 @@
+.total-detail {
+    position: fixed;
+    z-index: 999;
+    right: 5px;
+    top: 60px;
+}
+.summary-cart{
+    font-size: 0.6rem;
+
+}

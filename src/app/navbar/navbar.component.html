@@ -1,0 +1,23 @@
+<div>
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-text">
+                Products
+            </span>
+            <div class="pull-xs-right">
+                <button type="button" class="btn btn-outline-primary ms-2" (click)="isCollapsed = !isCollapsed"
+                    [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                    Total: &dollar; {{total}}.00
+                </button>
+            </div >
+        </div>
+    </nav>
+    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="total-detail m-6">
+        <div class="card p-2" >
+            <div class="row " *ngFor="let product of productList">
+                <div class="summary-cart col col-10">{{ product.title }}</div>
+                <div class="summary-cart col col-2">${{ product.price }}.00</div>
+            </div>
+        </div>
+    </div>
+</div>
