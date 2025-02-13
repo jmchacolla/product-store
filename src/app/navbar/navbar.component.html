@@ -15,8 +15,11 @@
     <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="total-detail m-6">
         <div class="card p-2" >
             <div class="row " *ngFor="let product of productList">
-                <div class="summary-cart col col-10">{{ product.title }}</div>
-                <div class="summary-cart col col-2">${{ product.price }}.00</div>
+                <div class="summary-cart col col-9">{{ product.title }}</div>
+                <div class="summary-cart col col-3">${{ product.price }}.00</div>
+                <div class="col col-12">
+                    <hr>
+                </div>
             </div>
         </div>
     </div>

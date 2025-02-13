@@ -13,7 +13,6 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent {
-  // @Input() productId: number = 0;
   product!: Product;
   total: number = 0;
   shoppingCart: Product[] = [];

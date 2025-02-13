@@ -5,4 +5,23 @@
         <app-card *ngFor="let product of productList" [productItem]="product" (newPurchase)="addNewPurchase($event)">
         </app-card>
     </div>
+
+
+    <div class="row">
+        <div class="col col-5 text-end">
+        </div>
+        <div class="col col-1">
+            <select class="form-select text-primary" name="" id="" [(ngModel)]="limit" (change)="getData()">
+                <option value="" disabled>Products by page</option>
+                <option value="6">6</option>
+                <option value="12">12</option>
+                <option value="18">18</option>
+                <option value="30">30</option>
+                <option value="60">60</option>
+            </select>
+        </div>
+        <div class="col col-6">
+            <ngb-pagination [collectionSize]="70" [(page)]="page" (pageChange)="getData()"/>
+        </div>
+    </div>
 </div>

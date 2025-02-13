@@ -14,8 +14,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  fetch(): Observable<any> {
-    return this.http.get(`${this.baseUrl}products`).pipe(map((data: any) => this.serializaProduct = data.products));
+  fetch(pageNumber: number, limit: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}products?page=${pageNumber}&limit=${limit}`).pipe(map((data: any) => this.serializaProduct = data.products));
   }
 
   getProduct(productId: number): Observable<any> {
