@@ -1,0 +1,11 @@
+<div *ngIf="hasAlerts()">
+    <div class="row">
+        <div class="col-12">
+            <div *ngFor="let alert of alerts; let i = index" class="alert alert-{{ alert.type }} alert-dismissible fade show"
+                role="alert">
+                {{ alert.message }}
+                <button type="button" class="btn-close" (click)="closeAlert(i)" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>

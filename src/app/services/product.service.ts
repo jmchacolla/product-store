@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
 
@@ -20,5 +20,12 @@ export class ProductService {
 
   getProduct(productId: number): Observable<any> {
     return this.http.get(`${this.baseUrl}products/${productId}`).pipe(map((data: any) => this.serializaProduct = data.product));
+  }
+
+  saveProduct(productData: any): Observable<any> {
+    productData.discount = productData.discount.toString();
+    productData.price = productData.price.toString();
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(`${this.baseUrl}products`,  productData, {headers} );
   }
 }

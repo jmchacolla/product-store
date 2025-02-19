@@ -1,0 +1,86 @@
+<app-alert-messages [alerts]="alerts"></app-alert-messages>
+<div class="container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Create Product</h5>
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group col col-6">
+                        <label for="title">Title</label>
+                        <input type="text" name="" id="title" formControlName="title" class="form-control">
+                        <div class="error-message" *ngIf="isFieldInvalid('title')">
+                            <small class="text-danger">{{ getErrorMessage('title') }}</small>
+                        </div>
+                    </div>
+                    <div class="form-group col col-6">
+                        <label for="brand">Brand</label>
+                        <input type="text" name="" id="brand" formControlName="brand" class="form-control">
+                        <div class="error-message" *ngIf="isFieldInvalid('brand')">
+                            <small class="text-danger">{{ getErrorMessage('brand') }}</small>
+                        </div>
+                    </div>
+                    <div class="form-group col col-6">
+                        <label for="description">Description</label>
+                        <textarea rows="1" type="text" name="" id="description" formControlName="description"
+                            class="form-control">
+                        </textarea>
+                        <div class="error-message" *ngIf="isFieldInvalid('description')">
+                            <small class="text-danger">{{ getErrorMessage('description') }}</small>
+                        </div>
+                    </div>
+                    <div class="form-group col col-6">
+                        <label for="model">Model</label>
+                        <input type="text" name="" id="model" formControlName="model" class="form-control">
+                        <div class="error-message" *ngIf="isFieldInvalid('model')">
+                            <small class="text-danger">{{ getErrorMessage('model') }}</small>
+                        </div>
+                    </div>
+                    <div class="form-group col col-6">
+                        <label for="color">Color</label>
+                        <input type="text" name="" id="color" formControlName="color" class="form-control">
+                        <div class="error-message" *ngIf="isFieldInvalid('color')">
+                            <small class="text-danger">{{ getErrorMessage('color') }}</small>
+                        </div>
+                    </div>
+                    <div class="form-group col col-6">
+                        <label for="category">Category</label>
+                        <input type="text" name="" id="category" formControlName="category" class="form-control">
+                        <div class="error-message" *ngIf="isFieldInvalid('category')">
+                            <small class="text-danger">{{ getErrorMessage('category') }}</small>
+                        </div>
+                    </div>
+                    <div class="form-group col col-6">
+                        <label for="price">Price</label>
+                        <input type="number" name="" id="price" formControlName="price" class="form-control">
+                        <div class="error-message" *ngIf="isFieldInvalid('price')">
+                            <small class="text-danger">{{ getErrorMessage('price') }}</small>
+                        </div>
+                    </div>
+                    <div class="form-group col col-6">
+                        <label for="discount">Discount</label>
+                        <input type="number" name="" id="discount" formControlName="discount" class="form-control">
+                        <div class="error-message" *ngIf="isFieldInvalid('discount')">
+                            <small class="text-danger">{{ getErrorMessage('discount') }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col col-6">
+                        <button class="btn btn-secondary" (click)="goToList()">Back to List</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-primary" type="submit" [disabled]="!productForm.valid"> Save </button>
+                        <p>
+                            <small *ngIf="!productForm.valid" class="text-danger">Please complete the form</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
